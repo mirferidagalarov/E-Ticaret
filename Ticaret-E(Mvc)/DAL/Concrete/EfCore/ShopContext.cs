@@ -17,8 +17,18 @@ namespace Ticaret_E_Mvc_.Concrete.EfCore
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+         
+
             modelBuilder.Entity<ProductCategory>()
-                .HasKey(c => new { c.CategoryId, c.ProductId });
+       .HasKey(bc => new { bc.CategoryId, bc.ProductId });
+            modelBuilder.Entity<ProductCategory>()
+                .HasOne(bc => bc.Category)
+                .WithMany(b => b.ProductCategories)
+                .HasForeignKey(bc => bc.CategoryId);
+            modelBuilder.Entity<ProductCategory>()
+                .HasOne(bc => bc.Product)
+                .WithMany(c => c.ProductCategories)
+                .HasForeignKey(bc => bc.ProductId);
         }
 
     }

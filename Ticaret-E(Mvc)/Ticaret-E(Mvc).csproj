@@ -8,8 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Concrete\Ado\" />
-    <Folder Include="Concrete\Dapper\" />
+    <Folder Include="DAL\Concrete\Ado\" />
+    <Folder Include="DAL\Concrete\Dapper\" />
   </ItemGroup>
 
   <ItemGroup>
